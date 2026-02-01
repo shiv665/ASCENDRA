@@ -729,12 +729,12 @@ export default function Career() {
                   placeholder="Skill Name *"
                   value={skillForm.name}
                   onChange={(e) => setSkillForm({ ...skillForm, name: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-orange-500 text-slate-900 placeholder:text-slate-400"
                 />
                 <select
                   value={skillForm.level}
                   onChange={(e) => setSkillForm({ ...skillForm, level: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-orange-500 text-slate-900"
                 >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
@@ -744,7 +744,7 @@ export default function Career() {
                 <select
                   value={skillForm.category}
                   onChange={(e) => setSkillForm({ ...skillForm, category: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-orange-500 text-slate-900"
                 >
                   <option value="technical">Technical</option>
                   <option value="soft-skills">Soft Skills</option>
@@ -754,7 +754,7 @@ export default function Career() {
                 </select>
                 <button
                   onClick={handleAddSkill}
-                  className="w-full py-3 bg-orange-500 rounded-xl font-semibold hover:bg-orange-600"
+                  className="w-full py-3 bg-orange-500 text-white rounded-xl font-semibold hover:bg-orange-600"
                 >
                   Add Skill
                 </button>
@@ -768,13 +768,13 @@ export default function Career() {
                   placeholder="Goal Title *"
                   value={goalForm.title}
                   onChange={(e) => setGoalForm({ ...goalForm, title: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-blue-500"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 text-slate-900 placeholder:text-slate-400"
                 />
                 <textarea
                   placeholder="Description (optional)"
                   value={goalForm.description}
                   onChange={(e) => setGoalForm({ ...goalForm, description: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-blue-500 resize-none"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 resize-none text-slate-900 placeholder:text-slate-400"
                   rows={3}
                 />
                 <input
@@ -782,12 +782,12 @@ export default function Career() {
                   placeholder="Deadline"
                   value={goalForm.deadline}
                   onChange={(e) => setGoalForm({ ...goalForm, deadline: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-blue-500"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 text-slate-900"
                 />
                 <select
                   value={goalForm.status}
                   onChange={(e) => setGoalForm({ ...goalForm, status: e.target.value })}
-                  className="w-full p-3 bg-dark-800 border border-dark-600 rounded-xl focus:outline-none focus:border-blue-500"
+                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 text-slate-900"
                 >
                   <option value="not-started">Not Started</option>
                   <option value="in-progress">In Progress</option>
@@ -795,7 +795,7 @@ export default function Career() {
                 </select>
                 <button
                   onClick={handleAddGoal}
-                  className="w-full py-3 bg-blue-500 rounded-xl font-semibold hover:bg-blue-600"
+                  className="w-full py-3 bg-blue-500 rounded-xl font-semibold hover:bg-blue-600 text-white"
                 >
                   Add Goal
                 </button>

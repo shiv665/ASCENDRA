@@ -139,13 +139,23 @@ Your role is to optimize academic success:
 Be supportive but also help students maintain academic honesty."""
 }
 
+# Model configuration - can be overridden via environment variable
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+
 def get_gemini_response(prompt: str) -> str:
     """Generate content using Gemini API with the new google.genai package"""
-    response = client.models.generate_content(
-        model='gemini-2.0-flash',
-        contents=prompt
-    )
-    return response.text
+    try:
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        print(f"Gemini API error: {e}")
+        # If quota exceeded, provide helpful error
+        if "RESOURCE_EXHAUSTED" in str(e) or "429" in str(e):
+            raise Exception(f"Gemini API quota exceeded. Please wait or get a new API key from https://aistudio.google.com/app/apikey")
+        raise e
 
 def get_gemini_model():
     """Legacy wrapper - returns a mock model object for backwards compatibility"""
